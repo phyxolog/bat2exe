@@ -1,18 +1,19 @@
 # bat2exe
-Small tool for generating tiny exe files from bat scripts.
 
-The loader was written on assembler (using masm32).
+**bat2exe** is a lightweight tool designed to convert batch (.bat) scripts into executable (.exe) files.
 
-The main dll was written on C, using WinAPI.
+The tool consists of two main components:
+- **Loader**: Written in Assembly using MASM32.
+- **Main DLL**: Developed in C, utilizing the WinAPI.
 
-# How to use
-Compile c-dll\main.cpp. You will get a dll, it can be used in your project.
+## How to use
+1. Compile `c-dll/main.cpp` to generate the DLL file. This DLL can then be integrated into your project.
+2. The DLL provides the following functions:
 
-Export functions:
+```c
+BOOL complie2exe(LPCSTR szFileName, LPCSTR szOutFileName, LPCSTR szSectionName, BOOL HideCmd)
+BOOL change_icon(LPCSTR szFileName, LPCSTR szIconFileName)
+```
 
-*BOOL complie2exe(LPCSTR szFileName, LPCSTR szOutFileName, LPCSTR szSectionName, BOOL HideCmd)*
-
-*BOOL change_icon(LPCSTR szFileName, LPCSTR szIconFileName)*
-
-# Some..
-That program is old, but suddenly it is necessary for someone. Totally not recommended for using in production.
+## Note
+This program is outdated but might still be useful in certain scenarios.
